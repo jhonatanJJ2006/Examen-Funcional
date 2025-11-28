@@ -1,6 +1,38 @@
 # Examen - Análisis de Inventario de Productos
 
-## Prompt del Examen
+## Prompt Original Completo
+
+> @examen/Inventario.sc:1-85 Con este codigo de aqui ayudame a completar de hacer las cosas que me faltan de las siguientes preguntas y requerimientos que tiene el examen(
+> 
+> Cada producto tiene un historial de precios (lista de Double). La gerencia quiere determinar cuál es el producto "más valioso" según su precio promedio, pero solo entre aquellos productos que:
+> 
+> Tienen al menos una cierta cantidad mínima de precios registrados.
+> 
+> Tienen un precio máximo en su historial mayor a un valor base (por ejemplo, 20.0).
+> 
+> Para registrar el resultado del análisis de manera clara, se pide definir una case class auxiliar:
+> 
+> case class ProductoPromedio(producto: Producto, promedio: Double)
+> 
+> Se debe implementar un método que reciba la lista de productos, el valor base para el precio máximo y la cantidad mínima de precios, y devuelva un valor de tipo ProductoPromedio que represente al producto con el mayor precio promedio entre los que cumplen las condiciones.
+> 
+> El método debe aplicar un algoritmo manual, sin usar groupBy ni tuplas, siguiendo una idea general como la siguiente:
+> 
+> Filtrar los productos que tienen suficientes precios en su lista y cuyo precio máximo es mayor que el valor base.
+> 
+> Para cada producto que pasó el filtro, calcular el promedio de su lista de precios (suma dividido para cantidad).
+> 
+> Construir, para cada producto válido, un objeto ProductoPromedio que almacene el producto original y su promedio.
+> 
+> Recorrer la lista de ProductoPromedio y seleccionar aquel que tenga el valor de promedio más alto.
+> 
+> )
+> 
+> y tambien quieor que me realices un readme donde lo expliques mejor
+
+---
+
+## Resumen de Requerimientos del Examen
 
 Cada producto tiene un historial de precios (lista de Double). La gerencia quiere determinar cuál es el producto "más valioso" según su precio promedio, pero solo entre aquellos productos que:
 
