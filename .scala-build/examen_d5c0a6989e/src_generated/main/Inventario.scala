@@ -62,13 +62,15 @@ val inventario: List[Producto] = List(
 )
 
 // Calcular Producto Promedio
+// Filtra productos que tienen al menos 'cantidadPrecios' registros
+// y cuyo precio máximo es mayor al 'precioBase'
 def calcularProductoPromedio(inventario: List[Producto], cantidadPrecios: Int, precioBase: Double): List[ProductoPromedio] = {
 
     inventario
-      .filter(producto => producto.precios.length == cantidadPrecios)
+      .filter(producto => producto.precios.length >= cantidadPrecios)
+      .filter(producto => producto.precios.max > precioBase)
       .map(producto => {
-        val preciosFiltrados = producto.precios.filter(_ > precioBase)
-        val promedio = preciosFiltrados.sum / preciosFiltrados.length
+        val promedio = producto.precios.sum / producto.precios.length
         ProductoPromedio(producto, promedio)
       })
 
